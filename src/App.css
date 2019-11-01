@@ -1,22 +1,36 @@
-.App {
+fieldset {
+  flex: 1;
+}
+
+footer {
+  background: #333333;
+  padding: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+main {
+  display: flex;
+  flex: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#controls {
+}
+
+#inputs {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+#btn--play {
+  padding: 1rem 2rem;
+}
+
+#videos {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.video {
+  flex: 1;
 }
