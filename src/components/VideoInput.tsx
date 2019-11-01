@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  Box,
+  Button,
+  FormGroup,
+  TextField,
+  Typography
+} from "@material-ui/core";
+import OpenInBrowserIcon from "@material-ui/icons/OpenInBrowser";
 
 interface Props {
   setVideoUrl?: (url: string) => void;
@@ -12,21 +20,27 @@ const VideoInput: React.FC<Props> = ({
   const [url, setUrl] = React.useState("");
 
   return (
-    <fieldset>
-      <legend>{title}</legend>
+    <Box style={{ flex: 1, margin: "1rem" }}>
+      <Typography variant="h5">{title}</Typography>
       <div>
-        <label htmlFor={`url-${title}`}>URL</label>
-        <input
-          type="url"
-          id={`url-${title}`}
-          value={url}
-          onChange={e => setUrl(e.target.value)}
-        />
-        <button type="button" onClick={() => setVideoUrl(url)}>
-          Load
-        </button>
+        <FormGroup>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            label="URL"
+            value={url}
+            onChange={e => setUrl(e.target.value)}
+          />
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={() => setVideoUrl(url)}
+          >
+            <OpenInBrowserIcon /> Load Video
+          </Button>
+        </FormGroup>
       </div>
-    </fieldset>
+    </Box>
   );
 };
 
